@@ -1,0 +1,95 @@
+#mapContainer {
+    height: 400px;
+    width: 50%;
+    float: left;
+  }
+
+  #placesListContainer {
+    width: 50%;
+    float: left;
+    overflow-y: auto;
+    height: 400px;
+  }
+
+  #placesList {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #checkResultButton {
+    position: absolute;
+    top: 85%;
+    left: 1%;
+    border-radius: 0;
+    transform: translate(-50%, -50%);
+    animation: pulseAnimation 2s infinite;
+    z-index: 1;
+  }
+
+  @keyframes pulseAnimation {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(173, 3, 3, 0.7);
+    }
+
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px 4px rgba(219, 5, 5, 0.5);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(233, 5, 5, 0.7);
+    }
+  }
+
+  
+  #mapContainer,
+  #placesListContainer {
+    display: none;
+    /* Hide containers initially */
+  }
+
+  #mapContainer,
+  #placesListContainer {
+    display: none;
+    /* Hide containers initially */
+    width: 50%;
+    /* Set appropriate width or as per existing styles */
+    float: left;
+    /* For side-by-side layout */
+  }
+
+  .alert-icon {
+    color: red;
+    /* Set the color of the alert icon */
+    margin-right: 5px;
+    /* Space between the icon and text */
+  }
+
+  .important-action {
+    display: flex;
+    /* Enables flexbox */
+    align-items: center;
+    /* Aligns items vertically in the center */
+    background-color: #ffcccc;
+    /* Light red background for emphasis */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+
+  .appointment-button {
+    padding: 10px 20px;
+    color: rgb(249, 252, 255);
+    /* White text color */
+    background-image: linear-gradient(to right, #007bff, #0056b3);
+    /* Gradient background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    /* Space between the text and the button */
+    height: 40px;
+    border-radius: 0;
+  }

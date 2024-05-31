@@ -1,0 +1,48 @@
+/* Centering the table on the page */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 80%;
+    /* Adjust the width as necessary */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    border-radius: 8px;
+    /* Rounded corners for modern look */
+    overflow: hidden;
+    /* Ensures the rounded corners affect inner elements */
+  }
+
+  /* Styling the table headers */
+  th {
+    background-color: #007bff;
+    /* A nice shade of blue, you can use any color */
+    color: #ffffff;
+    /* White text color for contrast */
+    text-align: center;
+    padding: 10px;
+    /* Adequate padding for spacing */
+    font-size: 18px;
+    /* Slightly larger font size for headers */
+  }
+
+  /* Styling the table data cells */
+  td {
+    text-align: center;
+    /* Center align text */
+    padding: 8px;
+    /* Padding for spacing within cells */
+    border-bottom: 1px solid #dddddd;
+    /* Light border for each row */
+  }
+
+  /* Zebra striping for rows */
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    /* Light gray for odd rows */
+  }
+
+  tbody tr:hover {
+    background-color: #ddd;
+    /* Highlight on hover for better UX */
+  }

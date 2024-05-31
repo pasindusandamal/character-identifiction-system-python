@@ -1,0 +1,7 @@
+Flask
+flask-pymongo
+PyMongo
+tensorflow
+Pillow
+werkzeug
+flask-mail

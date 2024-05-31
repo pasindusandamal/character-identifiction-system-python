@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+        body {
+            font-family: "Ysabeau Infant", sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            /* Gradient background */
+            color: white;
+            /* White text color */
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            /* Background for form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: black;
+            /* Text color for the form */
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            /* Centering title */
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            /* White text color for labels */
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            /* Light border for inputs */
+            box-sizing: border-box;
+        }
+
+        button {
+            background-image: linear-gradient(to right, #6441a5, #2a0845);
+            /* Gradient background for buttons */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            /* Full width */
+        }
+
+        .back-button {
+            background-color: #555;
+            /* Dark background for back button */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="font-size: 35px;">Online Appointment Form</h2>
+    <form id="appointmentForm" action="/submit_appointment" method="post">
+        <button type="button" class="back-button" onclick="window.history.back();">Back to Previous Page</button>
+
+        <label for="medicalCenter">Medical Center:</label>
+        <input type="text" id="medicalCenter" name="medicalCenter" readonly>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required placeholder="Patient Name">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required placeholder="Date Of Birth"> 
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}"
+            placeholder="Enter 10-digit phone number" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+        <label for="doctorName">Doctor Name:</label>
+        <input type="text" id="doctorName" name="doctorName" required placeholder="Doctor name">
+
+        <label for="doctorCategory">Doctor Category:</label>
+        <select id="doctorCategory" name="doctorCategory" required>
+            <option value="general-practitioner">General Practitioner (GP)</option>
+            <option value="pediatrician">Pediatrician</option>
+            <option value="cardiologist">Cardiologist</option>
+            <option value="dermatologist">Dermatologist</option>
+            <option value="gastroenterologist">Gastroenterologist</option>
+            <option value="neurologist">Neurologist</option>
+            <option value="ob-gyn">Obstetrician/Gynecologist (OB/GYN)</option>
+            <option value="oncologist">Oncologist</option>
+            <option value="orthopedist">Orthopedist</option>
+            <option value="ent-specialist">ENT Specialist (Otorhinolaryngologist)</option>
+            <option value="psychiatrist">Psychiatrist</option>
+            <option value="pulmonologist">Pulmonologist</option>
+            <option value="endocrinologist">Endocrinologist</option>
+            <option value="urologist">Urologist</option>
+            <option value="rheumatologist">Rheumatologist</option>
+            <option value="anesthesiologist">Anesthesiologist</option>
+        </select>
+
+        <label for="appointmentDate">Preferred Appointment Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+        <label for="appointmentTime">Preferred Appointment Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+        <label for="symptoms">Symptoms/Reason for Appointment:</label>
+        <textarea id="symptoms" name="symptoms" rows="4" required placeholder="Reason"></textarea>
+
+        <button type="submit">Submit Appointment</button>
+    </form>
+
+    <script>
+        var medicalCenterName = getParameterByName('medicalCenter');
+        document.getElementById('medicalCenter').value = medicalCenterName;
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+    </script>
+
+</body>
+
+</html>

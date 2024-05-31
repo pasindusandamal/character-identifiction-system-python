@@ -1,0 +1,277 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.images-container {
+  flex: 1;
+  /* Adjust the ratio between the images and the text as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 50%;
+  /* Each image takes up half of the images-container width */
+  padding: 5px;
+  /* Adjust the spacing between the images */
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-container {
+  flex: 1;
+  /* Adjust the ratio between the images and the text as needed */
+  padding: 0 20px;
+}
+
+.text-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.departments-container {
+  text-align: center;
+  background-color: #e0e0e0;
+  /* Light gray background color */
+  padding: 40px 0;
+}
+
+.department-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.department-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.departments {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* Allows wrapping for smaller screens */
+  padding: 0 20px;
+}
+
+.department {
+  flex: 1;
+  max-width: calc(33.333% - 40px);
+  /* 3 items per row, minus margin */
+  margin: 10px;
+  background-color: #ffffff;
+  /* White background for text */
+  border-radius: 5px;
+}
+
+.department img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+  /* Rounded corners at the top */
+}
+
+.department-text {
+  padding: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: left;
+  /* Aligns the text to the left */
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black color with 50% opacity */
+  border-radius: 5px;
+  /* Optional: if you want rounded corners */
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  /* Optional: if you want rounded corners */
+}
+
+.text-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  /* Adjust icon size */
+}
+
+.testimonial {
+  font-size: 1.2rem;
+  /* Adjust text size */
+  margin: 20px;
+}
+
+.author {
+  font-size: 1rem;
+  margin-top: 10px;
+  display: block;
+  font-style: italic;
+}
+
+.department {
+  overflow: hidden;
+  /* Ensures the image zoom does not break the layout */
+}
+
+.department img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+  /* Smooth transition for transform and filter */
+  width: 100%;
+  /* Ensure the image covers the area */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+.department:hover img {
+  transform: scale(1.1);
+  /* Zooms the image */
+  filter: brightness(50%);
+  /* Darkens the image */
+}
+
+.departments {
+  /* Container styles, ensure it's not center-aligning children */
+}
+
+.department {
+  /* Individual department styles */
+  text-align: left;
+  /* Align text to the left */
+  margin-bottom: 20px;
+}
+
+.department h2 {
+  font-family: "Titillium Web", sans-serif;
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.department-description {
+  font-family: "Titillium Web", sans-serif;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.learn-more-button {
+  color: rgb(250, 253, 255);
+  /* Adjusted text color */
+  background-image: linear-gradient(to right, #007bff, #0056b3);
+  /* Gradient background from light to dark blue */
+  /*background-color: #007bff; /* Bootstrap primary button color */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  /* Center text inside the button */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 15px;
+  cursor: pointer;
+  /* border-radius: 5px;*/
+}
+
+.learn-more-button:hover {
+  color: #0056b3;
+  /* Darker blue on hover */
+}
+
+.image-flip {
+  width: 350px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* hides the back side of the flip element when not facing the screen */
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* removes extra space inside the container */
+}
+
+.back {
+  transform: rotateY(180deg);
+  /* Rotate the back image by default to prepare for flip */
+}
+
+.image-flip:hover {
+  transform: rotateY(180deg);
+  /* Flip the container on hover */
+}
+
+.gradient-link {
+  font-size: 14px;
+  /* Adjust size as needed */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(146, 169, 219),
+    rgb(112, 108, 108)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin: 1px;
+}

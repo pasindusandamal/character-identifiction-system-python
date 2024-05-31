@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lung Cancer Detection System</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- Bootstrap CSS for responsive layout and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/Footer.css" />
+    <link rel="stylesheet" href="../static/css/Navbar.css" />
+
+    <link rel="stylesheet" href="../static/css/Banner.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+        body {
+            font-family: "Ysabeau Infant", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="primaryNavbar" class="navbar">
+        <!-- Social media icons on the left -->
+        <div style="float: left; color: rgb(112, 108, 108);">
+            <a href="https://linkedin.com" target="_blank" class="gradient-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://facebook.com" target="_blank" class="gradient-link"><i
+                    class="fab fa-facebook-f"></i></a>&nbsp;
+            <a href="https://plus.google.com" target="_blank" class="gradient-link"><i
+                    class="fab fa-google-plus-g"></i></a>&nbsp;
+        </div>
+
+        <!-- Contact details on the right -->
+        <div style="float:right; margin-right: -990px;">
+            <a href="healthylife@gmail.com" style="text-decoration: none; color: rgb(112, 108, 108); font-size: 12px;"
+                class="gradient-link"><i class="fas fa-envelope"></i>
+                healthylife@gmail.com</a>&nbsp;
+            <a href="+94 112 000 000" style="text-decoration: none; color: rgb(112, 108, 108); font-size: 12px;"
+                class="gradient-link"><i class="fas fa-phone"></i>
+                +94 112 000 000</a>
+        </div>
+
+        <div style="clear: both"></div>
+
+    </div>
+
+    <div id="secondaryNavbar" class="navbar">
+
+        <div class="logo-text">
+            <img src="../static/images/img_36.png" alt="Your Logo" style="height: 60px; width: 60px;" />
+        </div>
+
+        <nav>
+            <a href="/"
+                style="text-decoration: none; color: rgb(112, 108, 108); font-size: 16px; font-weight:bold;">Home</a>
+            <a href="/services"
+                style="text-decoration: none; color:rgb(112, 108, 108);font-size: 16px; font-weight:bold;">Services</a>
+            <a href="/about"
+                style="text-decoration: none; color: rgb(112, 108, 108);font-size: 16px; font-weight:bold;">About</a>
+            <a href="/contact"
+                style="text-decoration: none; color: rgb(112, 108, 108);font-size: 16px; font-weight:bold;">Contact</a>
+        </nav>
+
+        <div class="auth-buttons">
+
+            <a href="#signup" onclick="toggleFormVisibility()">Make an Aappoinment</a>
+        </div>
+
+    </div>
+
+    <!-- Banner Image with Overlay and Text Button -->
+    <div class="banner-image position-relative text-center">
+        <img src="../static/images/img_1.png" alt="Banner" class="img-fluid" />
+        <div class="overlay"></div>
+
+        <!-- New Text -->
+        <div class="banner-text" style="font-size: 17px; margin-left: 30px; margin-bottom: 5px;">Providing Quality Care
+            for
+            Everyone</div>
+
+
+
+    </div>
+
+
+    <!-- Form (initially hidden) -->
+    <div class="p-3" id="detectionForm" style="display: none">
+        <form id="predictionForm" action="/predict" method="post" enctype="multipart/form-data" class="p-3">
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1 me-3">
+                    <input type="file" name="file" accept=".jpg, .jpeg, .png" onchange="displayImage(this)"
+                        class="form-control" style="border-radius: 0;" />
+                </div>
+                <button type="submit" class="btn btn-primary" disabled id="submitBtn"
+                    style="color: rgb(255, 255, 255); /* Adjusted text color */
+        background-image: linear-gradient(to right, #007bff, #0056b3); /* Gradient background from light to dark blue */ border-radius: 0;">
+                    Predict
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <!-- Heading -->
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="text-center">About Us</h1>
+            </div>
+        </div>
+        <!-- Mission Statement Section -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2>Our Mission</h2>
+                <p>
+                    Our mission is to leverage cutting-edge machine learning technology to facilitate early detection of
+                    lung cancer,
+                    thereby increasing the survival rates and improving the quality of life for patients. We strive to
+                    provide accessible,
+                    accurate, and fast diagnostics through our advanced AI-driven platform.
+                </p>
+            </div>
+        </div>
+        <!-- Technology Section -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2>Our Technology</h2>
+                <p>
+                    Our system employs state-of-the-art machine learning algorithms to analyze CT scans for signs of
+                    lung cancer with high accuracy.
+                    The technology has been developed with the collaboration of leading oncologists and data scientists
+                    to ensure it meets clinical
+                    standards and patient safety protocols.
+                </p>
+            </div>
+        </div>
+        <!-- Team Section -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2>Our Team</h2>
+                <p>
+                    Our team consists of dedicated professionals from diverse backgrounds in healthcare, technology, and
+                    research.
+                    Each member brings a wealth of experience and a shared commitment to fighting lung cancer through
+                    innovation.
+                </p>
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Contact Us</h2>
+                <p>
+                    If you have any questions or would like to know more about our system, please don't hesitate to
+                    contact us.
+                    <a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Branding Column -->
+        <div class="footer-column">
+            <div class="logo-text">
+                <img src="../static/images/img_36.png" alt="Your Logo"
+                    style="height: 70px; width: 70px; margin-left: 10px;" />
+            </div>
+            <h3>Healthy Life</h3>
+            <p style="margin-top: -17px; font-size: 12px; margin-left: 15px;">Pure Living, Pure Life</p>
+
+        </div>
+
+
+        <!-- Departments Links Column -->
+        <div class="footer-column">
+            <h5>Services</h5>
+            <a href="#">Check Result</a>
+            <a href="#" style="margin-top: -10px;">Make an Appoinment</a>
+        </div>
+
+        <!-- Useful Links Column -->
+        <div class="footer-column">
+            <h5>Useful Links</h5>
+            <a href="#">About</a>
+            <a href="#" style="margin-top: -10px;">Contact</a>
+        </div>
+
+        <!-- Address Column -->
+        <div class="footer-column">
+            <h5>Contact</h5>
+            <p>Homagama Rd,Pitipana</p>
+            <p style="margin-top: -10px;">+94 112 000 000</p>
+            <p style="margin-top: -10px;">healthylife@gmail.com</p>
+            <!-- Social Icons -->
+            <div class="social-icons" style="margin-top: 2px; font-size: 16px; margin-left: 22px;">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Copyright Text -->
+    <div class="copyright">
+        Copyright ©2024 All rights reserved | This is made By HealthyLife
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function toggleFormVisibility() {
+            var form = document.getElementById("detectionForm");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+
+        function displayImage(input) {
+            var fileInput = input;
+            var imageContainer = document.getElementById("imageContainer");
+            var uploadedImage = document.getElementById("uploadedImage");
+            var submitBtn = document.getElementById("submitBtn");
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                    uploadedImage.style.display = "block";
+                    submitBtn.disabled = false;
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                uploadedImage.style.display = "none";
+                submitBtn.disabled = true;
+            }
+        }
+    </script>
+
+    <script>
+        let lastScrollTop = 0;
+        window.addEventListener(
+            "scroll",
+            function () {
+                var currentScroll =
+                    window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling down
+                    document.getElementById("primaryNavbar").style.top = "-50px"; // Adjust to match the height
+                    document.getElementById("secondaryNavbar").style.top = "0px"; // Move secondary nav up
+                } else {
+                    // Scrolling up
+                    document.getElementById("primaryNavbar").style.top = "0";
+                    document.getElementById("secondaryNavbar").style.top = "50px"; // Move secondary nav down to original position
+                }
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+            },
+            false
+        );
+    </script>
+
+    <script>
+        function toggleFormVisibility() {
+            var form = document.getElementById("detectionForm");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+
+        function displayImage(input) {
+            var fileInput = input;
+            var imageContainer = document.getElementById("imageContainer");
+            var uploadedImage = document.getElementById("uploadedImage");
+            var submitBtn = document.getElementById("submitBtn");
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                    uploadedImage.style.display = "block";
+                    submitBtn.disabled = false;
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                uploadedImage.style.display = "none";
+                submitBtn.disabled = true;
+            }
+        }
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" /></script>
+</body>
+
+</html>

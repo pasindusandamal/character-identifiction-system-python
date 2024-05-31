@@ -1,0 +1,62 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Navbar customization for transparent background and custom font */
+.navbar {
+  
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  transition: top 0.3s;
+}
+
+#primaryNavbar {
+  background-color: #f5fbff;
+  top: 0;
+  z-index: 1030;
+  height: 50px;
+  /* Ensure this is set to the actual height of your navbar */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#secondaryNavbar {
+  background-color: #fefefe;
+  top: 50px;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#secondaryNavbar .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+#secondaryNavbar .logo-text img {
+  height: 40px;
+  /* Adjust size accordingly */
+  margin-right: 10px;
+}
+
+#secondaryNavbar nav a {
+  margin: 0 10px;
+}
+
+#secondaryNavbar .auth-buttons a {
+  margin-left: 10px;
+  padding: 5px 15px;
+  color: rgb(131, 196, 255); /* Adjusted text color */
+  background-image: linear-gradient(to right, #007bff, #0056b3); /* Gradient background from light to dark blue */
+  text-decoration: none;
+  border-radius: 0;
+  border: solid 1px rgb(131, 196, 255);
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#secondaryNavbar .auth-buttons a:hover {
+  background-image: linear-gradient(to right, #0056b3, #007bff); /* Reverse gradient on hover */
+  color: white; /* Change text color on hover for better visibility */
+}
+
+

@@ -1,0 +1,42 @@
+.banner-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    text-align: center;
+    /* Ensure text alignment is centered if it breaks into multiple lines */
+    height: 500px;
+    /* Match the height of your banner image */
+  }
+
+  .banner-text {
+    position: absolute;
+    color: white;
+    /* Choose text color that stands out */
+    font-size: 24px;
+    /* Adjust size as needed */
+    font-weight: bold;
+    /* Optional: adds emphasis */
+    padding: 20px;
+    /* Adjust padding as needed */
+    background-color: rgba(0,
+        0,
+        0,
+        0.5);
+    /* Optional: adds a semi-transparent background to the text */
+    border-radius: 10px;
+    /* Optional: rounds the corners of the text background */
+  }
+
+  .banner-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black color with 50% opacity */
+  }
