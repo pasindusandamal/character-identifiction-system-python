@@ -1,5 +1,0 @@
-Flask
-PIL
-Image
-numpy
-os

@@ -3,10 +3,11 @@ from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
 app = Flask(__name__)
 
-model = load_model("keras_model.h5", compile=False)
+model = load_model("sign.h5", compile=False)
 class_names = open("labels.txt", "r").readlines()
 
 def preprocess_image(image_path):
