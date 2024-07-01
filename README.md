@@ -1,1 +1,6 @@
-[![Watch the video][https://github.com/sandamal97/character-identifiction-system-python/assets/95282280/9aa13619-d6ee-484e-ad35-b9a5b9931ff5 https://github.com/sandamal97/character-identifiction-system-python/assets/95282280/9aa13619-d6ee-484e-ad35-b9a5b9931ff5https://github.com/sandamal97/character-identifiction-system-python/assets/95282280/9aa13619-d6ee-484e-ad35-b9a5b9931ff5]
+
+
+[Watch the video](https://github.com/sandamal97/character-identifiction-system-python/assets/95282280/2840f010-4203-4395-af64-9dc186ac0d23)
+
+
+
